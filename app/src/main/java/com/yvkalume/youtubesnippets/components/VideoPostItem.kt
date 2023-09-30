@@ -27,35 +27,31 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.yvkalume.youtubesnippets.R
-import com.yvkalume.youtubesnippets.ui.theme.YoutubesnippetsTheme
 
 @Composable
 fun VideoPostItem() {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-    ) {
+    Card(modifier = Modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(300.dp)
                 .padding(16.dp)
         ) {
-            Box(
-                modifier = Modifier
-                    .zIndex(1f)
-                    .fillMaxSize()
-                    .clip(RoundedCornerShape(16.dp))
-                    .background(Color.Black.copy(alpha = 0.2f)),
+            Box(modifier = Modifier
+                .zIndex(1f)
+                .fillMaxSize()
+                .clip(RoundedCornerShape(16.dp))
+                .background(Color.Black.copy(alpha = 0.2f))
             )
             Image(
                 painter = painterResource(id = R.drawable.preview),
                 contentDescription = null,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxSize()
-                    .clip(RoundedCornerShape(16.dp)),
-                contentScale = ContentScale.Crop,
+                    .clip(RoundedCornerShape(16.dp))
             )
+
             Text(
                 text = "11:30",
                 style = MaterialTheme.typography.titleSmall.copy(color = Color.White),
@@ -68,7 +64,6 @@ fun VideoPostItem() {
                     .padding(8.dp)
             )
         }
-
         Row(
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             modifier = Modifier
@@ -78,18 +73,25 @@ fun VideoPostItem() {
             Image(
                 painter = painterResource(id = R.drawable.profile),
                 contentDescription = null,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(60.dp)
-                    .clip(CircleShape),
-                contentScale = ContentScale.Crop
+                    .clip(CircleShape)
             )
+
             Column {
                 Text(
                     text = "A beginner's guide to Compose",
                     style = MaterialTheme.typography.titleMedium
                 )
-                Text(text = "Tech with Malaika", style = MaterialTheme.typography.bodySmall)
-                Text(text = "1.2K views • 3 hours ago", style = MaterialTheme.typography.bodySmall)
+                Text(
+                    text = "Tech with Malaika",
+                    style = MaterialTheme.typography.bodySmall
+                )
+                Text(
+                    text = "1.2K views • 3 hours ago",
+                    style = MaterialTheme.typography.bodySmall
+                )
             }
         }
     }
@@ -98,7 +100,7 @@ fun VideoPostItem() {
 @Preview
 @Composable
 fun VideoPostItemPreview() {
-    YoutubesnippetsTheme {
+    MaterialTheme {
         VideoPostItem()
     }
 }
