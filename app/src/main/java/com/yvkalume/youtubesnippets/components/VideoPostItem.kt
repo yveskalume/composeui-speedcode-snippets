@@ -43,10 +43,10 @@ fun VideoPostItem() {
         ) {
             Box(
                 modifier = Modifier
+                    .zIndex(1f)
                     .fillMaxSize()
                     .clip(RoundedCornerShape(16.dp))
-                    .background(Color.Black.copy(alpha = 0.2f))
-                    .zIndex(1f),
+                    .background(Color.Black.copy(alpha = 0.2f)),
             )
             Image(
                 painter = painterResource(id = R.drawable.preview),
@@ -60,6 +60,7 @@ fun VideoPostItem() {
                 text = "11:30",
                 style = MaterialTheme.typography.titleSmall.copy(color = Color.White),
                 modifier = Modifier
+                    .zIndex(2f)
                     .padding(8.dp)
                     .clip(RoundedCornerShape(8.dp))
                     .background(color = Color.Black)
