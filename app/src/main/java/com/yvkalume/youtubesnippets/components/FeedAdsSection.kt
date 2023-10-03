@@ -35,19 +35,21 @@ fun FeedAdsSection() {
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.surface)
             .padding(start = 10.dp, end = 2.dp, top = 16.dp, bottom = 16.dp),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Column(
+            modifier = Modifier
+                .wrapContentSize(),
             verticalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.wrapContentSize()
+            horizontalAlignment = Alignment.Start
         ) {
             Text(
                 text = "Nurture your audience",
                 style = MaterialTheme.typography.titleMedium
             )
             Text(
-                text = "Learn how to build your \nbrand and generate demand \non LinkedIn.",
+                text = "Learn how to build your \nbrand and generate demand \non LinkedIn",
                 style = MaterialTheme.typography.bodySmall
             )
             Spacer(modifier = Modifier.height(1.dp))
@@ -62,8 +64,9 @@ fun FeedAdsSection() {
             modifier = Modifier
                 .size(120.dp)
                 .clip(CircleShape),
-            contentScale = ContentScale.Crop,
+            contentScale = ContentScale.Crop
         )
+
         Icon(
             imageVector = Icons.Default.MoreVert,
             contentDescription = null,
